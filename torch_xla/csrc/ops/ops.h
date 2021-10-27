@@ -227,6 +227,8 @@ NodePtr LogicalAnd(const Value& input, const Value& other);
 
 NodePtr LogicalOr(const Value& input, const Value& other);
 
+NodePtr XLogY(const Value& input, const Value& other);
+
 NodePtr NanToNum(const Value& input, const Value& nan, const Value& posinf,
                  const Value& neginf);
 

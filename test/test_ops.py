@@ -115,6 +115,10 @@ allowed_opinfo = set(
             AllowedOpInfoEntry('linalg.multi_dot'),
             AllowedOpInfoEntry('linalg.qr'),
             AllowedOpInfoEntry('linalg.slogdet'),
+            AllowedOpInfoEntry('log'),
+            AllowedOpInfoEntry('log10'),
+            AllowedOpInfoEntry('log1p'),
+            AllowedOpInfoEntry('log2'),
             AllowedOpInfoEntry('logaddexp'),
             AllowedOpInfoEntry('logaddexp2'),
             AllowedOpInfoEntry('logical_not'),
@@ -134,7 +138,6 @@ allowed_opinfo = set(
             AllowedOpInfoEntry('min', 'reduction_no_dim'),
             AllowedOpInfoEntry('nansum'),
             AllowedOpInfoEntry('quantile'),
-            AllowedOpInfoEntry('nanquantile'),
             AllowedOpInfoEntry('maximum'),
             AllowedOpInfoEntry('minimum'),
             AllowedOpInfoEntry('nn.functional.hardswish'),
@@ -253,6 +256,7 @@ allowed_opinfo = set(
             # Refer for more info : https://github.com/pytorch/xla/pull/3019#issuecomment-877132385
             # AllowedOpInfoEntry('cdist'),  // precision issue on TPU
             # AllowedOpInfoEntry('linalg.eigvals'),  // failing on TPU
+            # AllowedOpInfoEntry('nanquantile'), // TODO: retried at head once xlogy pr merged
             # AllowedOpInfoEntry('amax'),
             # AllowedOpInfoEntry('amin'),
             # AllowedOpInfoEntry('norm', 'nuc'),
@@ -293,10 +297,6 @@ allowed_opinfo = set(
             # AllowedOpInfoEntry('linalg.norm'),
             # AllowedOpInfoEntry('linalg.matrix_norm'),
             # AllowedOpInfoEntry('linalg.vector_norm'),
-            # AllowedOpInfoEntry('log'),
-            # AllowedOpInfoEntry('log10'),
-            # AllowedOpInfoEntry('log1p'),
-            # AllowedOpInfoEntry('log2'),
             # AllowedOpInfoEntry('std_mean'),
             # AllowedOpInfoEntry('sum'),
             # AllowedOpInfoEntry('mean'),
